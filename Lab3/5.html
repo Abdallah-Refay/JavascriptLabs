@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random names</title>
+</head>
+
+<body>
+    <h1>Refresh to generate random names</h1>
+    <hr>
+    <script>
+        var names = ["Abdallah", "Refay", "Ahmed", "Sayed", "Ali"]
+
+        function display_two_names(bunch_of_names) {
+            var first_random = Math.floor(Math.random() * 10 / 2);
+            var second_random = Math.floor(Math.random() * 10 / 2);
+            while (second_random == first_random) {
+                second_random = Math.floor(Math.random() * 10 / 2);
+            }
+            return [bunch_of_names[first_random] , bunch_of_names[second_random]];
+        }
+
+        document.write("<h3>"+display_two_names(names)+"<h3/>");
+    </script>
+</body>
+
+</html>

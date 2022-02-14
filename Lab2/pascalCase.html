@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Pascal Case</title>
+    <script>
+        do {
+            var input = prompt("Enter name in small cases");
+        }
+        while (!input)
+
+        var str = [];
+        str = input.split(" ");
+
+        for (var i = 0; i < str.length; i++) {
+            str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1);;
+        }
+        var res = str.join(" ");
+        console.log(res);
+        document.write('<h1>' + res + '</h1>');
+
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

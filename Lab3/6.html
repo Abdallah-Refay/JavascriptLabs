@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form taking</title>
+</head>
+
+<body>
+ 
+    <form action="greet_them.html" method="get">
+        Enter your name: <input type="text" name="username" required> <br><br><br>
+        Enter your age :<input type="number" name="age" min="18" required><br><br><br>
+        <input type="radio" id="male" name="gender" value="male" required>
+        <label for="male"><img style="height: 300px;width: 200px" src="male.png"></label>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female"><img style="height: 300px;width: 200px;" src="female.jpeg"></label><br><br><br>
+        <select name="color">
+            <option value="red" name="red"> Red</option>
+            <option value="green">Green</option>
+            <option value="blue">Blue</option>
+        </select>
+        <input type="submit">
+
+    </form>
+</body>
+
+</html>

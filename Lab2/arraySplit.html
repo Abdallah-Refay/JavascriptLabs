@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Array Split</title>
+    <script>
+      var input =  prompt("Enter Comma Seperated Values");
+      var myArr = [];
+      myArr = input.split(",");
+      var regax = /^\d+$/;
+
+      for(var i = 0; i < myArr.length; i++)
+      {
+        document.write(myArr[i]+"  ");
+      }
+      
+      document.write("<h2>Numbers Only</h2> <br/>");
+    
+      for(var i = 0; i < myArr.length; i++)
+      {
+        if(regax.test(myArr[i])) document.write(myArr[i]+"  ");
+      }
+
+      document.write("<h2>Array Elements* 2</h2> <br/>");
+
+      for(var i = 0; i < myArr.length; i++)
+      {
+        if(regax.test(myArr[i])) document.write(myArr[i]*2+"  ");
+      }
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

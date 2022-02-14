@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Slide Show</title>
+    <style>
+      div:nth-child(1) {
+        width: 800px;
+        height: 300px;
+
+        padding: 10px;
+        margin: 10px auto;
+        text-align: center;
+      }
+
+      img {
+        width: 300px;
+        height: 300px;
+      }
+
+      div:nth-child(1) > div {
+        width: 300px;
+
+        padding: 10px;
+        margin: 30px auto;
+        text-align: center;
+      }
+
+      input {
+        width: 60px;
+        padding: 5px;
+        text-align: center;
+        font: bold 12px verdana;
+      }
+
+      input:focus {
+        outline: none;
+        background-color: pink;
+        border: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <script>
+      var imagesarr = [
+        "up/1.jpg",
+        "up/2.jpg",
+        "up/3.jpg",
+        "up/4.jpg",
+        "up/5.jpg",
+        "up/6.jpg",
+        "up/7.jpg",
+      ];
+      _intervals = [];
+      var i = 0;
+      function startshow() {
+        if (_intervals.length < 1) {
+          _intervals.push(setInterval("nextshow()", 1000));
+        }
+      }
+
+      function nextshow() {
+        i++;
+        if (i >= imagesarr.length) i = 0;
+        mimg.src = imagesarr[i];
+      }
+      function prevshow() {
+        i--;
+        if (i < 0) i = imagesarr.length - 1;
+        mimg.src = imagesarr[i];
+      }
+      function stopshow() {
+        clearInterval(_intervals[0]);
+        _intervals = [];
+      }
+    </script>
+    <div>
+      <img src="UP/1.jpg" id="mimg" />
+      <div>
+        <input type="button" value="Start" onclick="startshow()" />
+        <input type="button" value="Next" onclick="nextshow()" />
+        <input type="button" value="Prev" onclick="prevshow()" />
+        <input type="button" value="Stop" onclick="stopshow()" />
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Count down</title>
+  </head>
+
+  <body>
+    <h1>Count down</h1>
+    <hr />
+    <input type="button" value="start counting" onclick="randomColor()" />
+    <script>
+      var backgroundcolors = [
+        "rgb(252, 186, 3)",
+        "rgb(120, 48, 6)",
+        "rgb(155, 168, 7)",
+        "rgb(77, 168, 7)",
+        "rgb(4, 219, 194)",
+        "rgb(4, 140, 219)",
+        "rgb(169, 102, 232)",
+        "rgb(232, 102, 230)",
+        "rgb(184, 114, 183)",
+        "rgb(166, 151, 163)",
+      ];
+      var i = 10;
+
+      function randomColor() {
+          var temp;
+          document.write("<h3>" + i + "</h3>");
+          var random1 = Math.floor(Math.random() * backgroundcolors.length);
+          do {
+            random1 = Math.floor(Math.random() * backgroundcolors.length);
+          } while (random1 == temp);
+
+          temp = random1;
+          document.body.style.backgroundColor = backgroundcolors[random1];
+          i--;
+       if(i < 0) window.close();
+       setInterval(randomColor, 1000);
+      }
+     
+ 
+    </script>
+  </body>
+</html>

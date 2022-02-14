@@ -1,0 +1,32 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <title>Table</title>
+</head>
+
+<body>
+    <script>
+        var arr = [1, 2, 3, 4, 5, 6];
+        var sum = 0;
+        for (var i = 0; i < 6; i++) {
+            sum += arr[i];
+        }
+        document.write(`<table border="1" >
+    <thead style=background-color:#57a0c2 > <th>values</th></thead>`)
+
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i] % 2 == 0) {
+                document.write(` <tr style=background-color:green> <td> ` + arr[i] + `</td></tr> `)
+            }
+            else {
+                document.write(" <tr  style=background-color:red> <td> " + arr[i] + "</td></tr>")
+            }
+
+        }
+        document.write(" <tr style=background-color:red> <td> SUM =  " + sum + "</td></tr>")
+        document.write(" </table>")
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello</title>
+</head>
+
+<body>
+
+    <script>
+        if (location.search.split("&")[2].split("=")[1] == "male") {
+            document.write('<img src="male.png">');
+        }
+        else {
+            document.write('<img src="female.jpeg">');
+        }
+        document.write("Hello: ")
+        var _name = location.search.split("&")[0].split("=")[1];
+        var string = "";
+        if (_name.split("+").length > 1) {
+            for (let index = 0; index < _name.split("+").length; index++) {
+                string += _name.split("+")[index];
+                string += " ";
+            }
+        }
+        else {
+            string += _name;
+        }
+        document.write('<span style="color:' + location.search.split("&")[3].split("=")[1] + '">' + string + '<span>');
+
+    </script>
+</body>
+
+</html>

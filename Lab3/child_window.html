@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: rgb(245, 208, 194);">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut odit eaque numquam a possimus commodi voluptatem
+        quae quam rem harum inventore tempora dolores recusandae odio nam voluptatibus, expedita consectetur impedit!
+    </p>
+
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut odit eaque numquam a possimus commodi voluptatem
+        quae quam rem harum inventore tempora dolores recusandae odio nam voluptatibus, expedita consectetur impedit!
+    </p>
+
+    <p class="smth">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut odit eaque numquam a possimus commodi
+        voluptatem quae quam rem harum inventore tempora dolores recusandae odio nam voluptatibus, expedita consectetur
+        impedit!
+    </p>
+    <script>
+        setInterval(function () {
+            window.scrollBy(0, 10)
+            console.log(window.pageYOffset);
+        }, 100);
+        // not accurate, ask about it | check on inner height, take into consideration pageYoffset , and compare it with offsethigh of the body , if the summation of both bigger than the body, it's done
+        setInterval(function () {
+            if (window.pageYOffset >= 295) {
+                window.close();
+            }
+        }, 100);
+
+    </script>
+</body>
+
+</html>

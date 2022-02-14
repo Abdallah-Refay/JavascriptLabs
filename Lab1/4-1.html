@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>4-1</title>
+<script>
+    var number = prompt("Enter your number");
+
+    do{
+        var initial = prompt("Enter your initial radix");
+    }while(initial < 2 || initial > 36);
+
+    do{
+        var target = prompt("Enter your target radix");
+    }while(target < 2 || target > 36);
+
+    var output = parseInt(number, parseInt(initial)).toString(parseInt(target));
+    document.write(output);
+ </script>
+</head>
+<body>
+
+</body>
+</html>

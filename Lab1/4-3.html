@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>4-3</title>
+<script>
+    var leng=0;
+    let arr = [10.2 , 20 , 34 , 333.12345];
+
+   for (let i=0 ; i<arr.length ; i++){
+       if (leng < arr[i].toString().length){
+           leng=arr[i].toString().length; 
+       }
+   }
+   for (let i=0 ; i<arr.length ; i++){
+       document.write(arr[i].toPrecision(leng-1)+"</br>");
+   }
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

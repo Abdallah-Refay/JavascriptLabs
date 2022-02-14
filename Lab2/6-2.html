@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>User Choice</title>
+    <script>
+        var arr = [];
+        var printStr = "";
+        var tmp = [];
+
+        do {
+            var size = prompt("Enter array size");
+        }
+        while (isNaN(size));
+
+        for (var i = 0; i < size; i++) {
+            do {
+                var input = prompt("Enter element: " + (i + 1));
+            }
+            while (isNaN(input));
+            arr.push(input);
+        }
+
+
+        function display(arr) {
+            printStr = '<h1>';
+            for (var i = 0; i < arr.length; i++) {
+                printStr += arr[i] + " ";
+            }
+            printStr += '<h1>';
+        }
+
+        function displayWithConcat(arr) {
+            printStr = '<h1>';
+            for (var i = 0; i < arr.length; i++) {
+                printStr += arr[i] + "***";
+            }
+            printStr += '<h1>';
+        }
+
+        var cont = 1;
+        while (cont) {
+            var promMessage = "Chose One of the following\na : display array\nb : display array with ascending order\n";
+            promMessage += "c : display array with descending order\nd : reversed version of original array\ne : display even numbers only\n";
+            promMessage += "f : show numbers divisable by number of your choice\ng : display array with 30% discount for all numbers\n";
+            promMessage += "h : display string which represent all numbers of array concated with ***\n";
+
+            var input = prompt(promMessage);
+
+            switch (input) {
+                case 'a':
+                    console.log("a");
+                    console.log(arr);
+                    display(arr);
+                    document.write(printStr);
+                    break;
+                case 'b':
+                    console.log("b");
+                    tmp = arr.slice().sort(function (a, b) { return a - b });
+                    display(tmp);
+                    document.write(printStr);
+                    break;
+                case 'c':
+                    console.log("c");
+                    tmp = arr.slice().sort(function (a, b) { return b - a });
+                    display(tmp);
+                    document.write(printStr);
+                    break;
+                case 'd':
+                    console.log("d");
+                    tmp = arr.slice().reverse();
+                    display(tmp);
+                    document.write(printStr);
+                    break;
+                case 'e':
+                    console.log("e");
+                    var even = [];
+                    for (var i = 0; i < arr.length; i++) {
+                        if (arr[i] % 2 == 0) even.push(arr[i]);
+                    }
+                    if (even.length < 1) document.write("<h2>doesn't contain any even numbers<h2>");
+                    else {
+                        display(even);
+                        document.write(printStr);
+                    }
+                    break;
+                case 'f':
+                    console.log("f");
+                    var divisableN = prompt("Enter Nubmer ");
+                    tmp = [];
+                    for (var i = 0; i < arr.length; i++) {
+                        if (arr[i] % divisableN == 0) tmp.push(arr[i]);
+                    }
+                    if (tmp.length < 1) document.write("<h2>doesn't contain any numbers Divisable by" + divisableN + "<h2>");
+                    else {
+                        display(tmp);
+                        document.write(printStr);
+                    }
+                    break;
+                case 'g':
+                    console.log("g");
+                    tmp = [];
+                    for (var i = 0; i < arr.length; i++) {
+                        tmp.push(arr[i] * 0.3);
+                    }
+                    display(tmp);
+                    document.write(printStr);
+                    break;
+                case 'h':
+                    console.log("h");
+                    displayWithConcat(arr);
+                    document.write(printStr);
+                    break;
+                default:
+                    alert("Please Enter Valid Option");
+            }
+
+            cont = prompt("Press 1 to continue or any key to exit");
+        }
+
+
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

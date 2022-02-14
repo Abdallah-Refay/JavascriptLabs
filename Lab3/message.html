@@ -1,0 +1,27 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character by character actual message</title>
+</head>
+
+<body>
+    <script>
+        var my_message = "this window displays a message character by character the window will terminate after it's done .......";
+        var lots_of_chars = my_message.split("");
+        var i = 0;
+        setInterval(display, 200);
+
+        function display() {
+            document.write(lots_of_chars[i]);
+            i++;
+            if (i >= lots_of_chars.length) {
+                window.close();
+            }
+        }
+    </script>
+</body>
+
+</html>
